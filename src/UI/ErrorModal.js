@@ -1,21 +1,25 @@
 import Button from "./Button";
+import Card from "./Card";
 
 import classes from "./ErrorModal.module.css";
 
 const ErrorModal = props => {
   return (
-    <div className={classes.backdrop}>
-      <div className={classes.modal}>
-        <div className={classes.header}>
-          <h2>Error</h2>
-        </div>
-        <div className={classes.content}>
-          {props.message}
-        </div>
-        <div className={classes.actions}>
-          <Button onClick={props.onDismiss}>Dismiss</Button>
-        </div>
-      </div>
+    <div>
+      <div className={classes.backdrop} onClick={props.onDismiss} />
+      <Card className={classes.modal}>
+        <div> 
+          <header className={classes.header}>
+            <h2>Error</h2>
+          </header>
+          <div className={classes.content}>
+            <p>{props.message}</p>
+          </div>
+          <footer className={classes.actions}>
+            <Button onClick={props.onDismiss}>Dismiss</Button>
+          </footer>
+        </div>        
+      </Card>
     </div>
   );
 }
