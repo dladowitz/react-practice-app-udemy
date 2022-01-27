@@ -54,7 +54,7 @@ const AddUser = (props) => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       {errorMessage && <ErrorModal message={errorMessage} onDismiss={dismissHandler}/>}
 
       <Card className={classes.input}>
@@ -77,7 +77,7 @@ const AddUser = (props) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </React.Fragment>
   );
 };
 
